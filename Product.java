@@ -1,11 +1,9 @@
 public class Product {
-    // Private variables for Encapsulation
     private int id;
     private String name;
     private int quantity;
     private double price;
 
-    // Default Constructor
     public Product() {
         this.id = 0;
         this.name = "No Name";
@@ -13,7 +11,6 @@ public class Product {
         this.price = 0.0;
     }
 
-    // Parameterized Constructor
     public Product(int id, String name, int quantity, double price) {
         this.id = id;
         this.name = name;
@@ -21,22 +18,26 @@ public class Product {
         this.price = price;
     }
 
-    // Getters so other classes can read the data safely
     public int getId() { return id; }
     public String getName() { return name; }
     public int getQuantity() { return quantity; }
     public double getPrice() { return price; }
 
-    // Method Overloading 1: Just show basic details
+    // Updated to perfectly match the vertical format in the screenshot
     public void showProduct() {
-        System.out.println("ID: " + id + " | Name: " + name + " | Qty: " + quantity + " | Price: Rs." + price);
+        System.out.println("-------------------------");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Price: " + price);
+        System.out.println("Stock Value: " + (quantity * price));
     }
 
-    // Method Overloading 2: Show details AND calculate the total value for this specific item
-    public void showProduct(boolean showValue) {
-        showProduct(); // calls the first method
-        if (showValue) {
-            System.out.println("   -> Total Value: Rs." + (quantity * price));
+    // Overloaded method for the search function
+    public void showProduct(boolean isSearch) {
+        if (isSearch) {
+            System.out.println("Product found:");
         }
+        showProduct(); 
     }
 }
